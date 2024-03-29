@@ -75,7 +75,7 @@ RUN chown -R django:django ${APP_HOME}
 
 USER django
 
-RUN DATABASE_URL="" \
+RUN DATABASE_URL="postgres://postgresuser:postgrespassword@srv-captain--postgres:5432/postgresdb" \
   DJANGO_SETTINGS_MODULE="config.settings.test" \
   python manage.py compilemessages
 
